@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent {
-
+serverid=23;
+status='offline';
+serverstatus(){
+  return this.status;
 }
+}
+
