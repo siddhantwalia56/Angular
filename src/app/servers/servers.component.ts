@@ -10,6 +10,8 @@ allownewserver=false;
 ServerStatus='';
 serverupdate=''
 servercreated=false
+servername='Testserver'
+servers=['Testserver1','Testserver2']
 constructor(){
   setTimeout(() => {
       this.allownewserver=true
@@ -19,6 +21,7 @@ ngOnInit() {
 }
 CreateServer(){
   this.servercreated=true;
+  this.servers.push(this.servername)
   return this.ServerStatus='Server is Connected by '+this.serverupdate;
 }
 Onupdateserver(event){
