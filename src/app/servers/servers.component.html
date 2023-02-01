@@ -1,3 +1,5 @@
+<input type="text" class="form-control" (input)="Onupdateserver($event)">
+<p>{{serverupdate}}</p>
 <button class="btn btn-primary" [disabled]="!allownewserver" (click)='CreateServer()'>Add server</button>
 <p>{{ServerStatus}}</p>
 <app-server></app-server>
