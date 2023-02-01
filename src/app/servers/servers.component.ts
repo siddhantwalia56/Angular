@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent implements OnInit {
 allownewserver=false;
 ServerStatus='Server is not connected';
-serverupdate=''
+serverupdate='name is '
 constructor(){
   setTimeout(() => {
       this.allownewserver=true
