@@ -9,7 +9,7 @@ export class ServersComponent implements OnInit {
 allownewserver=false;
 ServerStatus='';
 serverupdate=''
-servercreated='false'
+servercreated=false
 constructor(){
   setTimeout(() => {
       this.allownewserver=true
@@ -18,11 +18,10 @@ constructor(){
 ngOnInit() {
 }
 CreateServer(){
-  this.servercreated='true';
+  this.servercreated=true;
   return this.ServerStatus='Server is Connected by '+this.serverupdate;
 }
 Onupdateserver(event){
  this.serverupdate=(<HTMLInputElement>event.target).value
 }
 }
-

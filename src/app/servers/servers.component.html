@@ -1,10 +1,11 @@
 <!-- <input type="text" class="form-control" (input)="Onupdateserver($event)"> -->
+<label >Server Name</label>
 <input type="text" class="form-control"[(ngModel)]='serverupdate'>
 <!-- <p>{{serverupdate}}</p> -->
 <button class="btn btn-primary" [disabled]="!allownewserver" (click)='CreateServer()'>Add server</button>
-<p *ngIf="servercreated; else noserver">{{ServerStatus}}</p>
-<ng-template #noserver>
-    <p>Server is not connectd</p>
+<p *ngIf="servercreated; else noServer">{{ServerStatus}}</p>
+<ng-template #noServer>
+    <p>Server is not connected</p>
 </ng-template>
 <app-server></app-server>
 <app-server></app-server>
