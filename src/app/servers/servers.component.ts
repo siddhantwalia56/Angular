@@ -1,15 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-servers',
   templateUrl: './servers.component.html',
   styleUrls: ['./servers.component.css']
 })
-export class ServersComponent {
-serverid=23;
-status='offline';
-serverstatus(){
-  return this.status;
+export class ServersComponent implements OnInit {
+allownewserver=false;
+constructor(){
+  setTimeout(() => {
+      this.allownewserver=true
+      }, 3000);
+}
+ngOnInit() {
 }
 }
 
