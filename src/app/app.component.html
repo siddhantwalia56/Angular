@@ -11,7 +11,10 @@
     <div class="col-xs-12">
       <app-server-element *ngFor="let ser of serverElement"
       [element]="ser">
-
+      <p>
+        <strong *ngIf="ser.type === 'server'" style="color: red">{{ ser.content }}</strong>
+        <em *ngIf="ser.type === 'blueprint'">{{ ser.content }}</em>
+      </p>
     </app-server-element>
     </div>
   </div>
