@@ -3,11 +3,14 @@
 
 
 <div class="container">
-  <app-cockpit></app-cockpit>
+  <app-cockpit (servercreated)="onServerAdded($event)"
+  (blueprintCreated)="onBlueprintAdded($event)"
+  ></app-cockpit>
   <hr>
   <div class="row">
     <div class="col-xs-12">
-      <app-server-element *ngFor="let serverElement of serverElement"></app-server-element>
+      <app-server-element *ngFor="let ser of serverElement"
+      [element]="ser"></app-server-element>
     </div>
   </div>
 </div>
