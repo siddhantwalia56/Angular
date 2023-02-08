@@ -8,10 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   // name='Siddhant'
    title = 'first-app';
-  serverElement=[{type:'server', name:'Testserver',content:'Just a test!'}]
+  serverElements=[{type:'server', name:'Testserver',content:'Just a test!'}]
 
   onServerAdded(serverData:{serverName:string,serverContent: string}){
-    this.serverElement.push({
+    this.serverElements.push({
       type:'server',
       name:serverData.serverName,
       content:serverData.serverContent
@@ -19,11 +19,13 @@ export class AppComponent {
   }
 
   onBlueprintAdded(blueprintData:{serverName:string,serverContent: string}){
-    this.serverElement.push({
+    this.serverElements.push({
       type:'blueprint',
       name:blueprintData.serverName,
       content:blueprintData.serverContent
     })
   }
-
+  OnChange(){
+   this.serverElements[0].name='changed';
+  }
 }

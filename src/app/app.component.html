@@ -9,12 +9,11 @@
   <hr>
   <div class="row">
     <div class="col-xs-12">
-      <app-server-element *ngFor="let ser of serverElement"
-      [element]="ser">
-      <p>
-        <strong *ngIf="ser.type === 'server'" style="color: red">{{ ser.content }}</strong>
-        <em *ngIf="ser.type === 'blueprint'">{{ ser.content }}</em>
-      </p>
+      <button class="btn btn-primary" (click)="OnChange()">Change Name</button>
+      <app-server-element *ngFor="let ser of serverElements"
+      [element]="ser"
+      [name]="ser.name">
+
     </app-server-element>
     </div>
   </div>
