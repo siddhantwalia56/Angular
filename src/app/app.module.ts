@@ -6,9 +6,11 @@ import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { CockpitComponent } from './cockpit/cockpit.component';
 import { ServerElementComponent } from './server-element/server-element.component'
+import { BasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
 @NgModule({
   declarations: [
     AppComponent,
+    BasicHighlightDirective,
     ServerComponent,
     ServersComponent,
     CockpitComponent,
