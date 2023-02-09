@@ -34,16 +34,30 @@
           {{item}}
         </li>
       </div>
+        <!-- <div *ngIf="onlyOdd">
+          <li *ngFor="let item of oddnumbers"
+          class="list-group-item"
+          [ngClass]="{odd: item%2!=0}"
+          [ngStyle]="{backgroundColor: item%2==0?'green':'cyan'}">
+          {{item}}
+        </li>
+      </div>
         <br>
         <div *ngIf="!onlyOdd">
           <li *ngFor="let even of evennumbers"
           class="list-group-item">
           {{even}}
         </li>
-      </div>
+      </div> -->
+      <div *appUnless="onlyOdd">
+        <li *ngFor="let even of evennumbers"
+        class="list-group-item">
+        {{even}}
+      </li>
+    </div>
       </ul>
       <p appBasicHighlight>hi Siddhant</p>
-      <p appBetterHighlight>hi OnceHub</p>
+      <p appBetterHighlight [defaultcolor]="'yellow'" [highlightedcolor]="'lightgreen'">hi OnceHub</p>
     </div>
   </div>
 </div>
