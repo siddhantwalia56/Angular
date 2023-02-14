@@ -9,8 +9,13 @@ import { ServerElementComponent } from './server-element/server-element.componen
 import { BasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
 import { UnlessDirective } from './unless.directive';
+import { NewAccountComponent } from './new-account/new-account.component';
+import { AccountComponent } from './account/account.component';
+
 @NgModule({
   declarations: [
+    AccountComponent,
+    NewAccountComponent,
     AppComponent,
     BasicHighlightDirective,
     ServerComponent,

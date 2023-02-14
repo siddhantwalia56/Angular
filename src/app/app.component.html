@@ -18,7 +18,7 @@
     </div>
   </div>
 </div> -->
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <div class="col-xs-12">
       <button
@@ -33,7 +33,7 @@
           [ngStyle]="{backgroundColor: item%2==0?'green':'cyan'}">
           {{item}}
         </li>
-      </div>
+      </div> -->
         <!-- <div *ngIf="onlyOdd">
           <li *ngFor="let item of oddnumbers"
           class="list-group-item"
@@ -49,7 +49,7 @@
           {{even}}
         </li>
       </div> -->
-      <div *appUnless="onlyOdd">
+      <!-- <div *appUnless="onlyOdd">
         <li *ngFor="let even of evennumbers"
         class="list-group-item">
         {{even}}
@@ -60,6 +60,18 @@
       <p appBetterHighlight [defaultcolor]="'yellow'" [highlightedcolor]="'lightgreen'">hi OnceHub</p>
     </div>
   </div>
+</div> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <app-new-account (accountAdded)="onAccountAdded($event)"></app-new-account>
+      <hr>
+      <app-account
+        *ngFor="let acc of accounts; let i = index"
+        [account]="acc"
+        [id]="i"
+        (statusChanged)="onStatusChanged($event)"></app-account>
+    </div>
+  </div>
 </div>
-
-
