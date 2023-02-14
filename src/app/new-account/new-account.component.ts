@@ -5,14 +5,16 @@ import { loggingservice } from '../logging.service';
   selector: 'app-new-account',
   templateUrl: './new-account.component.html',
   styleUrls: ['./new-account.component.css'],
-  providers:[loggingservice,AccountsService]
+  providers:[]
 })
 export class NewAccountComponent {
 
-
-  constructor(private service:loggingservice, private accountservice:AccountsService){}
+sta=''
+  constructor(private service:loggingservice, private accountservice:AccountsService
+    ){this.accountservice.statuschanged.subscribe(
+      (status:string)=> this.sta=status
+    );}
   onCreateAccount(accountName: string, accountStatus: string) {
      this.accountservice.addaccount(accountName,accountStatus)
-     this.service.logging(accountStatus)
   }
 }

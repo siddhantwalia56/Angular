@@ -5,7 +5,7 @@ import { AccountsService } from '../account.service';
   selector: 'app-account',
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.css'],
-  providers:[ loggingservice,AccountsService]
+  providers:[ ]
 })
 export class AccountComponent {
   @Input() account: {name: string, status: string};
@@ -15,6 +15,6 @@ constructor(private service:loggingservice,private accountservice:AccountsServic
 
   onSetTo(status: string) {
     this.accountservice.updateaccount(this.id,status)
-    this.service.logging(status)
+this.accountservice.statuschanged.emit(status)
   }
 }
