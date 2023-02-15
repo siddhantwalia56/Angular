@@ -15,6 +15,6 @@ constructor(private service:loggingservice,private accountservice:AccountsServic
 
   onSetTo(status: string) {
     this.accountservice.updateaccount(this.id,status)
-this.accountservice.statuschanged.emit(status)
+  this.accountservice.statuschanged.emit(status)
   }
 }

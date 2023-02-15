@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms'
 import { AppComponent } from './app.component';
-import { ServerComponent } from './server/server.component';
+import { ServerComponent } from './servers/server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { CockpitComponent } from './cockpit/cockpit.component';
 import { ServerElementComponent } from './server-element/server-element.component'
@@ -13,9 +13,17 @@ import { NewAccountComponent } from './new-account/new-account.component';
 import { AccountComponent } from './account/account.component';
 import { AccountsService } from './account.service';
 import { loggingservice } from './logging.service';
+import { HomeComponent } from './home/home.component';
+import { UserComponent } from './users/user/user.component';
+import { EditServerComponent } from './servers/edit-server/edit-server.component';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
+    UsersComponent,
+    EditServerComponent,
+    UserComponent,
+    HomeComponent,
     AccountComponent,
     NewAccountComponent,
     AppComponent,
