@@ -17,7 +17,7 @@ import { HomeComponent } from './home/home.component';
 import { UserComponent } from './users/user/user.component';
 import { EditServerComponent } from './servers/edit-server/edit-server.component';
 import { UsersComponent } from './users/users.component';
-
+import { ServersService } from './servers/servers.service';
 @NgModule({
   declarations: [
     UsersComponent,
@@ -39,7 +39,7 @@ import { UsersComponent } from './users/users.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [AccountsService,loggingservice],
+  providers: [AccountsService,loggingservice,ServersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
