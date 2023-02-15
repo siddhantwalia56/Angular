@@ -18,6 +18,16 @@ import { UserComponent } from './users/user/user.component';
 import { EditServerComponent } from './servers/edit-server/edit-server.component';
 import { UsersComponent } from './users/users.component';
 import { ServersService } from './servers/servers.service';
+import { Routes, RouterModule } from '@angular/router';
+
+const appRoutes: Routes=[
+  {path: 'users',component:UsersComponent},
+  {path: '' ,component:HomeComponent},
+  {path: 'servers', component:ServersComponent}
+]
+
+export const routes: Routes = []
+
 @NgModule({
   declarations: [
     UsersComponent,
@@ -37,7 +47,8 @@ import { ServersService } from './servers/servers.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [AccountsService,loggingservice,ServersService],
   bootstrap: [AppComponent]
