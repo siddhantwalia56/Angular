@@ -25,7 +25,8 @@ const appRoutes: Routes=[
   {path: '' ,component:HomeComponent},
   {path: 'users/:id/:name',component:UserComponent},
   {path: 'servers', component:ServersComponent},
-  {path: 'servers/:id/edit', component:EditServerComponent}
+  {path: 'servers/:id/edit', component:EditServerComponent},
+  {path: 'servers/:id', component:ServerComponent}
 ]
 
 export const routes: Routes = []
