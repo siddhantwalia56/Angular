@@ -12,8 +12,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
   }
-  onclick(){
+  onclick(id:number){
     // complex computation
-    this.router.navigate(['home'],{relativeTo:this.route})
+    this.router.navigate(['servers',id,'edit'],{queryParams:{allowedit:'1'},fragment:'loading'})
   }
 }
