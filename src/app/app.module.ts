@@ -19,18 +19,8 @@ import { EditServerComponent } from './servers/edit-server/edit-server.component
 import { UsersComponent } from './users/users.component';
 import { ServersService } from './servers/servers.service';
 import { Routes, RouterModule } from '@angular/router';
-
-const appRoutes: Routes=[
-  {path: '' ,component:HomeComponent},
-  {path: 'users',component:UsersComponent, children:[
-    {path: ':id/:name',component:UserComponent},
-  ]},
-  {path: 'servers', component:ServersComponent, children:[
-    {path: ':id', component:ServerComponent},
-    {path: ':id/edit', component:EditServerComponent},
-  ]},
-
-]
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AppRoutingmodule } from './app-routing.module';
 
 export const routes: Routes = []
 
@@ -49,12 +39,13 @@ export const routes: Routes = []
     CockpitComponent,
     ServerElementComponent,
     BetterHighlightDirective,
-    UnlessDirective
+    UnlessDirective,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingmodule
   ],
   providers: [AccountsService,loggingservice,ServersService],
   bootstrap: [AppComponent]
