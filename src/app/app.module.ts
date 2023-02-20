@@ -25,6 +25,7 @@ import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
 import { CanDecativateGuard } from './servers/edit-server/can-deactivate-guard.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { ServerResolver } from './servers/server/server-resolver.serivce';
 
 export const routes: Routes = []
 
@@ -52,7 +53,7 @@ export const routes: Routes = []
     FormsModule,
     AppRoutingmodule
   ],
-  providers: [AccountsService,loggingservice,ServersService,AuthService,AuthGuard,CanDecativateGuard],
+  providers: [AccountsService,loggingservice,ServersService,AuthService,AuthGuard,CanDecativateGuard,ServerResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

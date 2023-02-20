@@ -10,6 +10,7 @@ import { UserComponent } from "./users/user/user.component";
 import { UsersComponent } from "./users/users.component";
 import { CanDecativateGuard } from "./servers/edit-server/can-deactivate-guard.service";
 import { ErrorPageComponent } from "./error-page/error-page.component";
+import { ServerResolver } from "./servers/server/server-resolver.serivce";
 
 const appRoutes: Routes=[
   {path: '' ,component:HomeComponent},
@@ -19,7 +20,7 @@ const appRoutes: Routes=[
    {path: 'servers',
    //canActivate:[AuthGuard],
    canActivateChild:[AuthGuard], component:ServersComponent, children:[
-    {path: ':id', component:ServerComponent},
+    {path: ':id', component:ServerComponent, resolve: {server:ServerResolver}},
     {path: ':id/edit', component:EditServerComponent, canDeactivate:[CanDecativateGuard]},
   ]
 },
