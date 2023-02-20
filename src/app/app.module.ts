@@ -23,6 +23,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AppRoutingmodule } from './app-routing.module';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
+import { CanDecativateGuard } from './servers/edit-server/can-deactivate-guard.service';
 
 export const routes: Routes = []
 
@@ -49,7 +50,7 @@ export const routes: Routes = []
     FormsModule,
     AppRoutingmodule
   ],
-  providers: [AccountsService,loggingservice,ServersService,AuthService,AuthGuard],
+  providers: [AccountsService,loggingservice,ServersService,AuthService,AuthGuard,CanDecativateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
