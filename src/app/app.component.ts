@@ -7,6 +7,7 @@ import { AccountsService } from './account.service';
   providers: []
 })
 export class AppComponent implements OnInit {
+
   // name='Siddhant'
    title = 'first-app';
   // serverElements=[{type:'server', name:'Testserver',content:'Just a test!'}]
@@ -29,14 +30,18 @@ export class AppComponent implements OnInit {
   // OnChange(){
   //  this.serverElements[0].name='changed';
   // }
-  numbers = [1, 2, 3, 4, 5];
-  oddnumbers=[1,3,5,7]
-  evennumbers=[2,4,6,8]
-  onlyOdd = false;
+//   numbers = [1, 2, 3, 4, 5];
+//   oddnumbers=[1,3,5,7]
+//   evennumbers=[2,4,6,8]
+//   onlyOdd = false;
 
- accounts:{name:string,status:string}[]=[]
- constructor(private accountservice:AccountsService){}
-ngOnInit(){
-  this.accounts=this.accountservice.accounts;
-}
+//  accounts:{name:string,status:string}[]=[]
+//  constructor(private accountservice:AccountsService){}
+// ngOnInit(){
+//   this.accounts=this.accountservice.accounts;
+// }
+constructor() {}
+
+  ngOnInit() {}
+
 }
