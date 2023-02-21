@@ -1,12 +1,14 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnDestroy,OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { AccountsService } from './account.service';
+import { UserService } from './user.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   providers: []
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit,OnDestroy {
 
   // name='Siddhant'
    title = 'first-app';
@@ -40,8 +42,15 @@ export class AppComponent implements OnInit {
 // ngOnInit(){
 //   this.accounts=this.accountservice.accounts;
 // }
-constructor() {}
-
-  ngOnInit() {}
-
+constructor(private userService:UserService) {}
+userActivated = false;
+private userstatus:Subscription
+  ngOnInit() {
+this.userstatus=this.userService.activatedEmitter.subscribe(didActivate=>{
+  this.userActivated=didActivate;
+  })
+  }
+  ngOnDestroy(){
+    this.userstatus.unsubscribe();
+  }
 }
