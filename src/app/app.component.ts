@@ -62,6 +62,7 @@ suggestUserName() {
 }@ViewChild('f') signupform:NgForm
 defaultQuestion='pet';
 answer=''
+genders=['Male','Female']
 // onSubmit(form:NgForm){
 //   console.log(form);
 // }

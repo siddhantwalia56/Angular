@@ -141,6 +141,12 @@
           <div class="form-group">
             <textarea name="QuestionAnswer" rows="3" [(ngModel)]="answer"></textarea>
             <p>Your Answer: {{answer}}</p>
+            <div class="radio" *ngFor="let gender of genders">
+
+              <label>
+                <input type="radio" name="gender" ngModel [value]="gender" required>{{gender}}
+              </label>
+            </div>
           </div>
         </div>
         <button class="btn btn-primary" type="submit"
