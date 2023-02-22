@@ -1,4 +1,4 @@
-import { Component,OnDestroy,OnInit } from '@angular/core';
+import { Component,OnDestroy,OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { AccountsService } from './account.service';
@@ -59,8 +59,11 @@ export class AppComponent  {
 
 suggestUserName() {
   const suggestedName = 'Superuser';
-}
-onSubmit(form:NgForm){
-  console.log(form);
+}@ViewChild('f') signupform:NgForm
+// onSubmit(form:NgForm){
+//   console.log(form);
+// }
+onSubmit(){
+  console.log(this.signupform)
 }
 }
