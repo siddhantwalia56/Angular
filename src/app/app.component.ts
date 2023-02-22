@@ -60,6 +60,8 @@ export class AppComponent  {
 suggestUserName() {
   const suggestedName = 'Superuser';
 }@ViewChild('f') signupform:NgForm
+defaultQuestion='pet';
+answer=''
 // onSubmit(form:NgForm){
 //   console.log(form);
 // }
