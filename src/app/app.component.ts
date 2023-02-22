@@ -8,7 +8,7 @@ import { UserService } from './user.service';
   styleUrls: ['./app.component.css'],
   providers: []
 })
-export class AppComponent implements OnInit,OnDestroy {
+export class AppComponent  {
 
   // name='Siddhant'
    title = 'first-app';
@@ -42,15 +42,21 @@ export class AppComponent implements OnInit,OnDestroy {
 // ngOnInit(){
 //   this.accounts=this.accountservice.accounts;
 // }
-constructor(private userService:UserService) {}
-userActivated = false;
-private userstatus:Subscription
-  ngOnInit() {
-this.userstatus=this.userService.activatedEmitter.subscribe(didActivate=>{
-  this.userActivated=didActivate;
-  })
-  }
-  ngOnDestroy(){
-    this.userstatus.unsubscribe();
-  }
+
+
+// constructor(private userService:UserService) {}
+// userActivated = false;
+// private userstatus:Subscription
+//   ngOnInit() {
+// this.userstatus=this.userService.activatedEmitter.subscribe(didActivate=>{
+//   this.userActivated=didActivate;
+//   })
+//   }
+//   ngOnDestroy(){
+//     this.userstatus.unsubscribe();
+//   }
+
+suggestUserName() {
+  const suggestedName = 'Superuser';
+}
 }
