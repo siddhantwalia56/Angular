@@ -1,7 +1,8 @@
 import { Component,OnDestroy,OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { AccountsService } from './account.service';
+import { CustomValidators } from './custom-validators';
 import { UserService } from './user.service';
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { UserService } from './user.service';
   styleUrls: ['./app.component.css'],
   providers: []
 })
-export class AppComponent  {
+export class AppComponent  implements OnInit{
 
   // name='Siddhant'
    title = 'first-app';
@@ -57,16 +58,39 @@ export class AppComponent  {
 //     this.userstatus.unsubscribe();
 //   }
 
-suggestUserName() {
-  const suggestedName = 'Superuser';
-}@ViewChild('f') signupform:NgForm
-defaultQuestion='pet';
-answer=''
-genders=['Male','Female']
-// onSubmit(form:NgForm){
-//   console.log(form);
+// suggestUserName() {
+//   const suggestedName = 'Superuser';
+//   this.signupform.setValue({
+//     userdata:{
+//       username:suggestedName,
+//       email:''
+//     },
+//     secret: 'pet',
+//     QuestionAnswer:'',
+//     gender: 'Male'
+//   })
 // }
-onSubmit(){
-  console.log(this.signupform)
+// @ViewChild('f') signupform:NgForm
+// defaultQuestion='';
+// answer=''
+// genders=['Male','Female']
+// // onSubmit(form:NgForm){
+// //   console.log(form);
+// // }
+// onSubmit(){
+//   console.log(this.signupform)
+// }
+projectForm:FormGroup
+
+ngOnInit(){
+  this.projectForm=new FormGroup({
+    'projectName': new FormControl(null,[ Validators.required,CustomValidators.invalidProjectname],
+      CustomValidators.asyncInvalidProjectName),
+    'email': new FormControl( null,[Validators.required, Validators.email]),
+    'Status': new FormControl('critical')
+  });
+}
+onsaveProject(){
+  console.log(this.projectForm.value)
 }
 }

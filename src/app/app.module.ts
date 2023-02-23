@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms'
 import { AppComponent } from './app.component';
 import { ServerComponent } from './servers/server/server.component';
 import { ServersComponent } from './servers/servers.component';
@@ -54,7 +54,7 @@ export const routes: Routes = []
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    ReactiveFormsModule,
     AppRoutingmodule
   ],
   providers: [AccountsService,loggingservice,ServersService,AuthService,AuthGuard,CanDecativateGuard,ServerResolver],

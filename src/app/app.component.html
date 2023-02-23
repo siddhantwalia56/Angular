@@ -116,13 +116,13 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <form (ngSubmit)="onSubmit()" #f="ngForm">
+      <!-- <form (ngSubmit)="onSubmit()" #f="ngForm">
         <div id="user-data" ngModelGroup="userdata" #userdata="ngModelGroup">
           <div class="form-group">
             <label for="username">Username</label>
             <input type="text" id="username" class="form-control" ngModel name="username" required>
           </div>
-          <button class="btn btn-default" type="button">Suggest an Username</button>
+          <button class="btn btn-default" type="button" (click)="suggestUserName()">Suggest an Username</button>
           <div class="form-group">
             <label for="email">Mail</label>
             <input type="email" id="email" class="form-control"
@@ -151,6 +151,28 @@
         </div>
         <button class="btn btn-primary" type="submit"
         [disabled]="!f.valid">Submit</button>
+      </form> -->
+
+      <form [formGroup]="projectForm" (ngSubmit)="onsaveProject()">
+        <div class="form-group">
+          <label for="name">Project Name</label>
+          <input type="text" id="name" formControlName="projectName" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="email">Mail</label>
+          <input type="email" id="email" formControlName="email" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="status">Project Sataus</label>
+          <select id="status"
+           formControlName="Status"
+           class="form-control">
+              <option value="stable">Stable</option>
+              <option value="critical">Critical</option>
+              <option value="completed">Completed</option>
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Create Project</button>
       </form>
     </div>
   </div>
