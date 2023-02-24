@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { AppComponent } from './app.component';
 import { ServerComponent } from './servers/server/server.component';
 import { ServersComponent } from './servers/servers.component';
@@ -29,6 +29,7 @@ import { ServerResolver } from './servers/server/server-resolver.serivce';
 import { UserComponentObs } from './user/user.component';
 import { HomeComponentObs } from './home/home.component';
 import { ShortenPipe } from './shorten_pipe';
+import { FilterPipe } from './filter.pipe';
 
 export const routes: Routes = []
 
@@ -52,11 +53,13 @@ export const routes: Routes = []
     UnlessDirective,
     PageNotFoundComponent,
     ErrorPageComponent,
-    ShortenPipe
+    ShortenPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    FormsModule,
     AppRoutingmodule
   ],
   providers: [AccountsService,loggingservice,ServersService,AuthService,AuthGuard,CanDecativateGuard,ServerResolver],

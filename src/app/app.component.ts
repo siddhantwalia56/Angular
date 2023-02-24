@@ -93,6 +93,7 @@ export class AppComponent {
 // onsaveProject(){
 //   console.log(this.projectForm.value)
 // }
+filteredStatus:string='';
 
 servers = [
   {
