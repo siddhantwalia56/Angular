@@ -28,6 +28,7 @@ import { ErrorPageComponent } from './old-components/error-page/error-page.compo
 import { ServerResolver } from './servers/server/server-resolver.serivce';
 import { UserComponentObs } from './user/user.component';
 import { HomeComponentObs } from './home/home.component';
+import { ShortenPipe } from './shorten_pipe';
 
 export const routes: Routes = []
 
@@ -50,7 +51,8 @@ export const routes: Routes = []
     BetterHighlightDirective,
     UnlessDirective,
     PageNotFoundComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    ShortenPipe
   ],
   imports: [
     BrowserModule,
