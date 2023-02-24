@@ -10,7 +10,7 @@ import { UserService } from './user.service';
   styleUrls: ['./app.component.css'],
   providers: []
 })
-export class AppComponent  implements OnInit{
+export class AppComponent {
 
   // name='Siddhant'
    title = 'first-app';
@@ -80,17 +80,51 @@ export class AppComponent  implements OnInit{
 // onSubmit(){
 //   console.log(this.signupform)
 // }
-projectForm:FormGroup
+// projectForm:FormGroup
 
-ngOnInit(){
-  this.projectForm=new FormGroup({
-    'projectName': new FormControl(null,[ Validators.required,CustomValidators.invalidProjectname],
-      CustomValidators.asyncInvalidProjectName),
-    'email': new FormControl( null,[Validators.required, Validators.email]),
-    'Status': new FormControl('critical')
-  });
-}
-onsaveProject(){
-  console.log(this.projectForm.value)
+// ngOnInit(){
+//   this.projectForm=new FormGroup({
+//     'projectName': new FormControl(null,[ Validators.required,CustomValidators.invalidProjectname],
+//       CustomValidators.asyncInvalidProjectName),
+//     'email': new FormControl( null,[Validators.required, Validators.email]),
+//     'Status': new FormControl('critical')
+//   });
+// }
+// onsaveProject(){
+//   console.log(this.projectForm.value)
+// }
+
+servers = [
+  {
+    instanceType: 'medium',
+    name: 'Production Server',
+    status: 'stable',
+    started: new Date(15, 1, 2017)
+  },
+  {
+    instanceType: 'large',
+    name: 'User Database',
+    status: 'stable',
+    started: new Date(15, 1, 2017)
+  },
+  {
+    instanceType: 'small',
+    name: 'Development Server',
+    status: 'offline',
+    started: new Date(15, 1, 2017)
+  },
+  {
+    instanceType: 'small',
+    name: 'Testing Environment Server',
+    status: 'stable',
+    started: new Date(15, 1, 2017)
+  }
+];
+getStatusClasses(server: {instanceType: string, name: string, status: string, started: Date}) {
+  return {
+    'list-group-item-success': server.status === 'stable',
+    'list-group-item-warning': server.status === 'offline',
+    'list-group-item-danger': server.status === 'critical'
+  };
 }
 }
