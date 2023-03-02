@@ -94,7 +94,11 @@ export class AppComponent {
 //   console.log(this.projectForm.value)
 // }
 filteredStatus:string='';
-
+appstatus=new Promise((resolve,reject)=>{
+  setTimeout(() => {
+    resolve('Stable')
+  }, 2000);
+})
 servers = [
   {
     instanceType: 'medium',
@@ -127,5 +131,13 @@ getStatusClasses(server: {instanceType: string, name: string, status: string, st
     'list-group-item-warning': server.status === 'offline',
     'list-group-item-danger': server.status === 'critical'
   };
+}
+OnAdd(){
+  this.servers.push({
+    instanceType: 'small',
+    name: 'New Server',
+    status: 'stable',
+    started: new Date(15, 5, 2023)
+  })
 }
 }
