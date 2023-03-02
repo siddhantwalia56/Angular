@@ -1,7 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {  ComponentFixture, TestBed, async } from '@angular/core/testing';
+import { DataService } from '../shared/data.service';
 
 import { TestCompComponent } from './test-comp.component';
-import { TestCompService } from './test-comp.ervice';
+import { TestCompService } from './test-comp.service';
 
 describe('Component: test-comp',()=>{
   beforeEach(()=>{
@@ -40,5 +41,18 @@ describe('Component: test-comp',()=>{
     let compiled= fixture.debugElement.nativeElement;
     expect(compiled.querySelector('p').textContent).not.toContain(app.user.name)
   })
+
+  it('should fetch data successfully if called asynchronously',async(()=>{
+    let fixture=TestBed.createComponent(TestCompComponent);
+    let app=fixture.debugElement.componentInstance;
+    let dataservice=fixture.debugElement.injector.get(DataService);
+    let spy=spyOn(dataservice, 'getDetails')
+    .and.returnValue(Promise.resolve('Data'));
+    fixture.detectChanges();
+    fixture.whenStable().then(()=>{
+      expect(app.data).toBe('Data');
+    })
+  }));
+
 
 })
