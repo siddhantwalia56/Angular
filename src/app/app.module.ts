@@ -30,6 +30,7 @@ import { UserComponentObs } from './user/user.component';
 import { HomeComponentObs } from './home/home.component';
 import { ShortenPipe } from './shorten_pipe';
 import { FilterPipe } from './filter.pipe';
+import { TestCompComponent } from './test-comp/test-comp.component';
 
 export const routes: Routes = []
 
@@ -54,7 +55,8 @@ export const routes: Routes = []
     PageNotFoundComponent,
     ErrorPageComponent,
     ShortenPipe,
-    FilterPipe
+    FilterPipe,
+    TestCompComponent
   ],
   imports: [
     BrowserModule,
